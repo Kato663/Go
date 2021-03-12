@@ -65,6 +65,7 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
+                            <!--navberDropdownの中身はaに囲まれた文字の中に以下のdropdpwn-menuを格納する-->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -76,7 +77,6 @@
                                     @csrf
                                  </form>
                             </div>
-                            
                         </li>
                 </ul>
                 @endguest
