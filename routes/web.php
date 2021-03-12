@@ -22,9 +22,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //postで情報を送るURLに出ない
 });
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
-    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
+    Route::post('profile/create', 'Admin\ProfileController@create');
 });
 Auth::routes();
 
