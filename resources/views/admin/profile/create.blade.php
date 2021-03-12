@@ -11,6 +11,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>課題用Profile</h2>
+                
             </div>
         </div>
     </div>
