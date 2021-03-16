@@ -33,14 +33,8 @@
             
             <div class="form-goup row">
                 <label class="col-md-2">性別</label>
-                <div class="form-check">
-                    <input class="form-check-input col-md-5" type="radio" name="flexRadioDefault" id="flexRedioDefault">
-                    <label class="form-check-label" for="flexRedioDefault1">男性</label>
-                </div>
-                
-                <div class="form-check">
-                    <input class="form-check-input col-md-5" type="radio" name="flexRadioDefault" id="flexRedioDefault">
-                    <label class="form-check-label " for="flexRedioDefault2">女性</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="gender" value="{{ old('name')}}">
                 </div>
             </div>
             

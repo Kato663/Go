@@ -9,7 +9,7 @@ class News extends Model
 	protected $guarded = array('id');
     //
     public static $rules = array(
-    	'title' => 'required',
+    	'title' => 'required', //必須項目
     	'body' => 'required',
     	);
 }
