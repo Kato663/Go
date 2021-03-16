@@ -24,7 +24,7 @@
                     <div class="form-group row">
                         <!--rowは行のことを指しており、12等分できるという考えなので、md-2は行を2/12しておくという意味-->
                         <!--詳しくはブーストラップで検索-->
-                        <label class="col-md-2">タイトル</label>
+                        <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title')}}">
                                 <!--タイトルの横につくしろいところoldでエラーが出たときに前の文章が保存される？-->
@@ -32,14 +32,14 @@
                     </div>
                     <!--ここまでがタイトル文-->
                     <div class="form-group row">
-                        <label class="col-md-2">本文</label>
+                        <label class="col-md-2" for="body">本文</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     <!--ここまでが本文-->
                     <div class="form-group row">
-                        <label class="col-md-2">画像</label>
+                        <label class="col-md-2"  for="title">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <!--typeをfileにすることでデスクトップフォルダ検索できるようになる-->

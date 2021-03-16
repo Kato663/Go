@@ -15,7 +15,24 @@ class NewsController extends Controller
   
   public function create(Request $request)
   {
-      // admin/news/createにリダイレクトする
-      return redirect('admin/news/create');
+    $this ->　validate($request, News::$rules);
+    
+    $news = new News;
+    $form = $request->all();
+    
+    if(isset($form['image'])){
+      $path = $request -> file('image') -> store('public/image');
+      $news -> image_path = basename($path);
+    }  //画像が送られてきたら、$news->image_pathに画像を保存する
+    else{
+      $news -> image_path = null;
+    }
+    unset($form['_token']);
+    unset($form['image']);
+    
+    $news -> fill($form);
+    $news -> save();
+    // admin/news/createにリダイレクトする
+    return redirect('admin/news/create');
   }  
 }
