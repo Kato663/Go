@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //getで情報を取り出すURLに情報が出る
     Route::post('news/create', 'Admin\NewsController@create');
     //postで情報を送るURLに出ない
+    Route::get('news', 'Admin\NewsController@index');
 });
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
