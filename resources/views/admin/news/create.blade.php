@@ -48,7 +48,14 @@
                     </div>
                     <!--ここまでが画像の入れ方-->
                     {{ csrf_field()}}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="submit" class="btn btn-primary" value="更新">
+                        </div>
+                        <div class="col-md-10">
+                            <a href="{{ action('Admin\NewsController@index') }}" role="button" class="btn btn-primary col-md-9">ニュース一覧に戻る</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
