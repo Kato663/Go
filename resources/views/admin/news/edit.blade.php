@@ -18,13 +18,14 @@
                     	@foreach($errors->all() as $e)
                             <li>{{ $e }}</li>
                     	@endforeach
+                    <!--エラーメッセージをすべて表示すること-->
                     </ul>
                     @endif
        
                     <div class="form-group row">
                     	<label class="col-md-2" for="title">タイトル</label>
                     	<div class="col-md-10">
-                    		<input type="text" class="form-control" name="title" value="{{$news -> title }}">
+                    		<input type="text" class="form-control" name="title" value="{{$news_form -> title }}">
                     	</div>
                     </div>
                     
