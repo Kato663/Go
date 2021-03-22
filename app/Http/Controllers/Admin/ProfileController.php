@@ -28,17 +28,6 @@ class ProfileController extends Controller
     }
     
     
-  
-  public function edit(Request $request)
-  {
-      // News Modelからデータを取得する
-      $news = Profile::find($request->id);
-      if (empty($news)) {
-        abort(404);    
-      }
-      return view('admin.profile.edit', ['news_form' => $news]);
-  }
-  
   public function index(Request $request)
   {
     $cond_title = $request->cond_title;
@@ -64,8 +53,25 @@ class ProfileController extends Controller
 
       // 該当するデータを上書きして保存する
       $news->fill($news_form)->save();
+      $test_1 = "WBS";
 
-      return redirect('admin/profile');
+      return redirect('admin/profile')->with('test_1',$test_1);
+  }
+  
+  public function edit(Request $request)
+  {
+    $profile = Profile::find($request->id);
+    if(empty($profile)){
+      abort(404);
+    }
+    return view('admin.profile.edit',['profile_form'=>$profile]);
+  }
+  
+  public function delete(Request $request)
+  {
+    $profile = Profile::find($request->id);
+    $profile->delete();
+    return redirect('admin/profile/');
   }
 }
 
