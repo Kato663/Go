@@ -22,17 +22,17 @@ class NewsController extends Controller
     $form = $request->all();
     
     if(isset($form['image'])){
-      $path = $request -> file('image') -> store('public/image');
-      $news -> image_path = basename($path);
+      $path = $request->file('image')->store('public/image');
+      $news->image_path = basename($path);
     }  //画像が送られてきたら、$news->image_pathに画像を保存する
     else{
-      $news -> image_path = null;
+      $news->image_path = null;
     }
     unset($form['_token']);
     unset($form['image']);
     
-    $news -> fill($form);
-    $news -> save();
+    $news->fill($form); //git commit と同じようなもの
+    $news->save();      //git push と同じようなもの
     // admin/news/createにリダイレクトする
     return redirect('admin/news/create');
   }  
@@ -47,7 +47,7 @@ class NewsController extends Controller
     // それ以外はすべてのニュースを取得する
       $posts = News::all();
     }
-    return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+    return view('admin.news.index', ['posts'=>$posts, 'cond_title'=>$cond_title]);
   }
   
   public function edit(Request $request)
@@ -56,7 +56,7 @@ class NewsController extends Controller
     if(empty($news)){
       abort(404);
     }
-    return view('admin.news.edit',['news_form' => $news]);
+    return view('admin.news.edit',['news_form'=>$news]);
   }
   
     public function update(Request $request)
@@ -78,7 +78,7 @@ class NewsController extends Controller
   public function delete(Request $request)
   {
     $news = News::find($request -> id);
-    $news -> delete();
+    $news->delete();
     return redirect('admin/news/');
   }
 }
