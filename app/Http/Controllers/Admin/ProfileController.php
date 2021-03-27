@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Profile;
+use App\Background; //Background.phpを使用する
+use Carbon\Carbon; //時間を管理するところにアクセス
 
 class ProfileController extends Controller
 {
@@ -50,10 +52,15 @@ class ProfileController extends Controller
       // 送信されてきたフォームデータを格納する
       $news_form = $request->all();
       unset($news_form['_token']);
-
       // 該当するデータを上書きして保存する
       $news->fill($news_form)->save();
-      $test_1 = "WBS";
+      $test_1 = "WBS";  //withテスト
+      
+      $background = new Background; //Backgroundのデータを$backgroundに代入
+      $background->profile_id = $news->id; //backgroundのprofile_idをnewsのidと同じにする
+      $background->edited_at = Carbon::now(); //updateが行われた時の時間を表示する
+      $background->save(); //updateが行われたときbackgroundを保存する
+      
 
       return redirect('admin/profile')->with('test_1',$test_1);
   }

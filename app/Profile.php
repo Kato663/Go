@@ -15,4 +15,9 @@ class Profile extends Model
         'hobby' => 'required',
         'introduction' => 'required',
     );
+    
+    public function backgrounds() //functionは小文字始まりが普通
+    {
+        return $this->hasMany('App\Background'); //Backgroundとひもづけする
+    }
 }

@@ -12,5 +12,9 @@ class News extends Model
     	'title' => 'required', //必須項目
     	'body' => 'required',
     	);
+    	
+    public function histories(){
+    	return $this->hasMany('App\History');
+    }
 }
 
