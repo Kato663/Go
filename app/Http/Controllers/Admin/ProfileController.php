@@ -54,7 +54,7 @@ class ProfileController extends Controller
       unset($news_form['_token']);
       // 該当するデータを上書きして保存する
       $news->fill($news_form)->save();
-      $test_1 = "WBS";  //withテスト
+      $test_1 = "更新完了";  //withテスト
       
       $background = new Background; //Backgroundのデータを$backgroundに代入
       $background->profile_id = $news->id; //backgroundのprofile_idをnewsのidと同じにする
@@ -69,9 +69,11 @@ class ProfileController extends Controller
   {
     $profile = Profile::find($request->id);
     if(empty($profile)){
-      abort(404);
+      abort(404);  //404not_foundをだす
     }
-    return view('admin.profile.edit',['profile_form'=>$profile]);
+    
+     $test_1 = "WBS";  //withテスト
+    return view('admin.profile.edit',['profile_form'=>$profile])->with('test_1',$test_1);
   }
   
   public function delete(Request $request)

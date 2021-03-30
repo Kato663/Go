@@ -50,7 +50,7 @@
                             <textarea class="form-control" name="introduction" rows="15">{{ old('introduction') }}</textarea>
                         </div>
             </div>
-            {{ csrf_field()}}
+            {{ csrf_field() }}
             <div class="row">
                 <div class="col-md-2">
                     <input type="submit" class="btn btn-primary" value="更新">
