@@ -52,10 +52,10 @@
                         </div>
                     </div>
                     <hr color="#c0c0c0">
-                    <h2>更新完了</h2>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
+        <h2>更新完了</h2>
     </div>
     </div>
 <?php $__env->stopSection(); ?>
