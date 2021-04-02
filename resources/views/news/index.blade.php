@@ -51,6 +51,7 @@
                         </div>
                     </div>
                     <hr color="#c0c0c0">
+                    <h2>更新完了</h2>
                 @endforeach
             </div>
         </div>
