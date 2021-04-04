@@ -55,6 +55,8 @@
             </div>
         </div>
         <h2>更新完了</h2>
+        
+        
     </div>
     </div>
 @endsection
